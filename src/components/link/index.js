@@ -1,5 +1,7 @@
 import { PrimaryLink } from "./PrimaryLink";
 
-export const Links = {
+const Links = {
   PrimaryLink,
 }
+
+export default Links

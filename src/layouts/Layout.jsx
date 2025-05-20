@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import { Outlet } from "react-router";
-import Fotter from "./Fotter";
 
 const LayoutBox = styled.div`
   padding: 0 5vw;
@@ -14,7 +13,6 @@ const Layout = () => {
     <LayoutBox>
       <Header />
       <Outlet />
-      <Fotter />
     </LayoutBox>
   );
 };

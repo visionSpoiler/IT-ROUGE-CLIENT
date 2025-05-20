@@ -1,5 +1,2 @@
-import MainPage from "./mainpage/MainPage";
-
-export const Pages = {
-  MainPage,
-}
+export {default as MainPage} from "./main/MainPage";
+export {default as UserPostsPage} from './userPosts/UserPostsPage'

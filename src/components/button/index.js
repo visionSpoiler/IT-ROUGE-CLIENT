@@ -1,5 +1,11 @@
 import { PrimaryButton } from './PrimaryButton'
+import { SidebarButton } from './SidebarButton'
+import { CircleButton } from './CircleButton'
 
-export const Buttons = {
-  PrimaryButton
+const Buttons = {
+  PrimaryButton,
+  SidebarButton,
+  CircleButton
 }
+
+export default Buttons
