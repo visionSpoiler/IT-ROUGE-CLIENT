@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ky": "^1.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.5.3",
+    "react-router-dom": "^7.6.1",
+    "react-tag-input": "^6.10.6",
     "styled-components": "^6.1.17",
     "styled-reset": "^4.5.2",
     "zustand": "^5.0.4"

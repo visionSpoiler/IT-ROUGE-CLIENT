@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 import GithubIcon from "./../../assets/githubicon.svg?react";
 import EmailIcon from "./../../assets/emailicon.svg?react";
-import { useState } from "react";
 import SearchIcon from "./../../assets/search.svg?react";
+import React, { useState } from "react";
 
 const Layout = styled.div`
   display: flex;
@@ -151,16 +151,15 @@ const SearchBox = styled.div`
   justify-content: end;
   align-items: center;
   color: #6c757d;
-
+  margin-bottom: 48px;
 `;
 
 const SearchInputBox = styled.div`
   padding: 0.5rem;
   background-color: white;
-  border: 1px solid #6c757d;;
+  border: 1px solid #6c757d;
   display: flex;
   align-items: center;
-
 `;
 
 const SearchInput = styled.input`
@@ -168,6 +167,60 @@ const SearchInput = styled.input`
   background: none;
   outline: none;
   color: black;
+`;
+
+const PostsBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+`;
+
+const PostImageBox = styled.div`
+  width: 100%;
+  height: 400px;
+`;
+const PostImage = styled.img`
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+`;
+const PostTitle = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  margin: 16px 0;
+`;
+
+const PostIntro = styled.div`
+  color: #6c757d;
+  margin-bottom: 16px;
+`;
+
+const TagBox = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+`;
+
+const Tag = styled.button`
+  border: 1px solid #ced4da;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #f1f3f5;
+  }
+`;
+
+const PostInfoBox = styled.div`
+  color: #adb5bd;
+  font-size: 12px;
 `;
 
 const UserPostsPage = () => {
@@ -219,6 +272,17 @@ const UserPostsPage = () => {
             <SearchInput placeholder="검색어를 입력하세요." />
           </SearchInputBox>
         </SearchBox>
+        <PostsBox>
+          <PostImageBox>
+            <PostImage src="https://mblogthumb-phinf.pstatic.net/MjAyMTAyMjNfNjQg/MDAxNjE0MDM1NDM4Mjky.BjBzgrbXiOb8qJA_I8k-8rWtEwDYyVJhtyT6fcWXTyIg.QTCXxPm6mHqxvmzoa-BHdlbsyjF8SaIJt_sNJ0mH5Wkg.JPEG.ckp4646/g26c096832d924bee4fea17e25a7ab0d11814ad34da25a2fcf24138cd09240c80a5f7f314956.jpg?type=w800" />
+          </PostImageBox>
+          <PostTitle>제목제목</PostTitle>
+          <PostIntro>소개소개</PostIntro>
+          <TagBox>
+            <Tag>태그</Tag>
+          </TagBox>
+          <PostInfoBox>년월일시분초</PostInfoBox>
+        </PostsBox>
       </Body>
     </Layout>
   );
