@@ -11,12 +11,13 @@ import {
 } from "../../components/WritePage/WriteEditor";
 import getCaretCoordinates from "textarea-caret";
 import LinkInputModal from "./LinkInputModal";
-import { useWritePageLinkModalContext } from "../../stores/WritePageLinkModalContext";
+import { writePageLinkModalContext } from "../../stores/WritePageLinkModalContext";
+import { writePageTagsContext } from "../../stores/WritePageTagsContext";
 import { useFormatter } from "../../hooks/useFormatter";
 import Toolbar from "./Toolbar";
 import TagList from "./TagList";
 
-const WriteEditor = ({ text, setText }) => {
+const WriteEditor = ({ text, setText, title, setTitle }) => {
   const textareaRef = useRef(null);
   const fileInputRef = useRef(null);
   const {
@@ -41,10 +42,12 @@ const WriteEditor = ({ text, setText }) => {
     linkText,
     setLinkText,
     position,
-  } = useWritePageLinkModalContext();
+  } = writePageLinkModalContext();
+
+  const { tags, addTag, deleteTag } = writePageTagsContext();
 
   const handleClickConfirmOnLinkModal = () => {
-    const { linkText } = useWritePageLinkModalContext.getState();
+    const { linkText } = writePageLinkModalContext.getState();
     formatLink(linkText);
     closeLinkModal();
   };
@@ -69,9 +72,9 @@ const WriteEditor = ({ text, setText }) => {
   return (
     <WriteBox>
       <WriteBoxLayout>
-        <WriteTitle placeholder="제목을 입력하세요." />
+        <WriteTitle placeholder="제목을 입력하세요." value={title} onChange={(e) => setTitle(e.target.value)}/>
         <WriteBoundaryLine />
-        <TagList />
+        <TagList tags={tags} onDeleteTag={deleteTag} onAddTag={addTag}/>
         <Toolbar
           fileInputRef={fileInputRef}
           formatBold={formatBold}

@@ -10,7 +10,7 @@ const urlTransform = (url, key, node) => {
   return url; // URL을 그대로 반환
 };
 
-const Preview = ({text}) => {
+const Preview = ({text, title}) => {
   return (
     <PreviewBox className="markdown-body">
         <ReactMarkdown
@@ -18,7 +18,7 @@ const Preview = ({text}) => {
           remarkPlugins={[remarkGfm, remarkBreaks]}
           urlTransform={urlTransform}
         >
-          {text}
+          {`${title ? '# ' + title+'\n' : ""}`+text}
         </ReactMarkdown>
       </PreviewBox>
   )

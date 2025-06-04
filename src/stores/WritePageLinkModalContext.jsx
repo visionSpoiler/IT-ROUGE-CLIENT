@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export const useWritePageLinkModalContext = create((set, get) => ({
+export const writePageLinkModalContext = create((set, get) => ({
   isLinkModalOpen: false,
   linkText: "",
   position: { x: 0, y: 0 },
