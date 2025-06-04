@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { StringUtils} from '../../utils'
+import { clamp } from "../../utils/stringUtils";
 
 const MainPagePostCardBox = styled.div`
   display: flex;
@@ -69,7 +69,7 @@ const MainPagePostCard = ({post}) => {
       </MainPagePostCardThumbnailBox>
       <MainPagePostCardContentBox>
         <MainPagePostCardContentTitle>제목 wpdddddddddddddddddddddddddddddddddddddddddddddddddd</MainPagePostCardContentTitle>
-        <MainPagePostCardContentBody>{`${StringUtils.clamp("제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목", 75)}`}</MainPagePostCardContentBody>
+        <MainPagePostCardContentBody>{`${clamp("제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목", 75)}`}</MainPagePostCardContentBody>
         <MainPagePostCardSubInfo>날짜 및 시간</MainPagePostCardSubInfo>
       </MainPagePostCardContentBox>
       <MainPagePostCardFotter>푸터</MainPagePostCardFotter>

@@ -24,7 +24,7 @@ import {
   LoginModalFotterText,
   LoginModalFotterTextButton,
   LogimModalEmailSentText
-} from "../../components/LayoutHeader/index";
+} from "../../components/LoginModal/index";
 import { CircleButton } from "../../components/button/CircleButton";
 
 const imageSrc = [

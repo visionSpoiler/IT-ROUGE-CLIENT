@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const SidebarButton = styled.button`
-  background-color: white;
+export const SidebarButton = styled.div`
   cursor: pointer;
   color: black;
   border: none;

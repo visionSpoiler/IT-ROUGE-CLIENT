@@ -1,7 +1,2 @@
-import { clamp } from "./clamp";
-
-const StringUtils = {
-  clamp
-}
-
-export default StringUtils;
+export {default as clamp } from "./clamp";
+export {default as countLeadingMatchingChars } from "./countLeadingMatchingChars";

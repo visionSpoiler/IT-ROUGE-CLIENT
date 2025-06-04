@@ -16,8 +16,8 @@ const DropDownMenu = ({ menus }) => {
     <DropDownMenuBox>
       <Sidebar.BasicSidebar>
         {menus.map((val, i) => (
-          <li>
-            <Buttons.SidebarButton key={i}>{val}</Buttons.SidebarButton>
+          <li key={i}>
+            <Buttons.SidebarButton>{val}</Buttons.SidebarButton>
           </li>
         ))}
       </Sidebar.BasicSidebar>
