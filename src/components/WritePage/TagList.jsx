@@ -18,3 +18,10 @@ export const Tag = styled.button`
   padding: 0.5rem 1.2rem;
   font-size: 16px;
 `;
+
+export const TagInput = styled.input`
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+`;

@@ -1,5 +1,5 @@
 import React from "react";
-import { TagBox, Tag } from "../../components/WritePage/TagList";
+import { TagBox, Tag, TagInput } from "../../components/WritePage/TagList";
 
 const TagList = ({tags, setTags}) => {
   return (

@@ -33,13 +33,6 @@ export const WriteBoundaryLine = styled.div`
   background-color: #343a40;
 `;
 
-export const TagInput = styled.input`
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 16px;
-`;
-
 export const EditorBox = styled.div`
   position: relative;
   display: flex;
