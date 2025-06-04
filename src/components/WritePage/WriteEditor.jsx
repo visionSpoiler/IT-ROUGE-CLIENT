@@ -33,57 +33,11 @@ export const WriteBoundaryLine = styled.div`
   background-color: #343a40;
 `;
 
-export const TagBox = styled.div`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-  gap: 8px;
-`;
-
-export const Tag = styled.button`
-  border: 1px solid #ced4da;
-  background-color: white;
-  outline: none;
-  cursor: pointer;
-  border-radius: 16px;
-  padding: 0.5rem 1.2rem;
-  font-size: 16px;
-`;
-
 export const TagInput = styled.input`
   border: none;
   outline: none;
   background: none;
   font-size: 16px;
-`;
-
-export const Toolbar = styled.div`
-  display: flex;
-  justify-content: start;
-  gap: 4px;
-  flex-wrap: wrap;
-`;
-
-export const ToolbarButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  color: #6c757d;
-  font-size: 24px;
-  font-weight: bold;
-
-  &:hover {
-    background-color: #f8f9fa;
-    color: black;
-  }
 `;
 
 export const EditorBox = styled.div`
@@ -126,6 +80,3 @@ export const ExitButton = styled.button`
   }
 `;
 
-export const ImageFileInput = styled.input`
-  visibility: hidden;
-`

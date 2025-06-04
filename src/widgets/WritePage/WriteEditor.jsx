@@ -1,11 +1,4 @@
-import React, { useRef, useState } from "react";
-import BoldIcon from "./../../assets/boldicon.svg?react";
-import ItalicIcon from "./../../assets/italicIcon.svg?react";
-import CodeIcon from "./../../assets/CodeIcon.svg?react";
-import QuoteIcon from "./../../assets/doublequotationmarksicon.svg?react";
-import LinkIcon from "./../../assets/LinkIcon.svg?react";
-import ImageIcon from "./../../assets/ImageIcon.svg?react";
-import StrikethroughIcon from "./../../assets/Strikethroughicon.svg?react";
+import { useRef } from "react";
 import {
   Editor,
   EditorBox,
@@ -14,18 +7,17 @@ import {
   Tag,
   TagBox,
   TagInput,
-  Toolbar,
-  ToolbarButton,
   WriteBoundaryLine,
   WriteBox,
   WriteBoxLayout,
   WriteTitle,
-  ImageFileInput,
 } from "../../components/WritePage/WriteEditor";
 import getCaretCoordinates from "textarea-caret";
 import LinkInputModal from "./LinkInputModal";
 import { useWritePageLinkModalContext } from "../../stores/WritePageLinkModalContext";
 import { useFormatter } from "../../hooks/useFormatter";
+import Toolbar from "./Toolbar";
+import TagList from "./TagList";
 
 const WriteEditor = ({ text, setText }) => {
   const textareaRef = useRef(null);
@@ -41,8 +33,8 @@ const WriteEditor = ({ text, setText }) => {
     formatQuote,
     formatStrike,
     formatImage,
-    formatLink
-  } = useFormatter(textareaRef, setText)
+    formatLink,
+  } = useFormatter(textareaRef, setText);
 
   const {
     openLinkModal,
@@ -53,7 +45,6 @@ const WriteEditor = ({ text, setText }) => {
     setLinkText,
     position,
   } = useWritePageLinkModalContext();
-
 
   const handleClickConfirmOnLinkModal = () => {
     const { linkText } = useWritePageLinkModalContext.getState();
@@ -81,66 +72,24 @@ const WriteEditor = ({ text, setText }) => {
   return (
     <WriteBox>
       <WriteBoxLayout>
-        {/* 마크다운 입력기 위치*/}
         <WriteTitle placeholder="제목을 입력하세요." />
         <WriteBoundaryLine />
-        {/* 위젯으로 빼자 */}
-        <TagBox>
-          <Tag>태그1</Tag>
-          <Tag>태그2</Tag>
-          <Tag>태그3</Tag>
-          <TagInput placeholder="태그를 입력하세요." />
-        </TagBox>
-        {/* 위젯으로 빼자  */}
-        <Toolbar>
-          <ToolbarButton
-            onClick={formatH1}
-          >
-            H1
-          </ToolbarButton>
-          <ToolbarButton
-            onClick={formatH2}
-          >
-            H2
-          </ToolbarButton>
-          <ToolbarButton
-            onClick={formatH3}
-          >
-            H3
-          </ToolbarButton>
-          <ToolbarButton
-            onClick={formatH4}
-          >
-            H4
-          </ToolbarButton>
-          <ToolbarButton onClick={formatBold}>
-            <BoldIcon />
-          </ToolbarButton>
-          <ToolbarButton onClick={formatItalic}>
-            <ItalicIcon />
-          </ToolbarButton>
-          <ToolbarButton onClick={formatStrike}>
-            <StrikethroughIcon />
-          </ToolbarButton>
-          <ToolbarButton onClick={formatQuote}>
-            <QuoteIcon />
-          </ToolbarButton>
-          <ToolbarButton onClick={handleClickLinkButton}>
-            <LinkIcon />
-          </ToolbarButton>
-          <ToolbarButton onClick={handleClickImageButton}>
-            <ImageIcon />
-          </ToolbarButton>
-          <ToolbarButton onClick={formatCodeBlock}>
-            <CodeIcon />
-          </ToolbarButton>
-          <ImageFileInput
-            type="file"
-            accept="image/*"
-            ref={fileInputRef}
-            onChange={formatImage}
-          />
-        </Toolbar>
+        <TagList />
+        <Toolbar
+          fileInputRef={fileInputRef}
+          formatBold={formatBold}
+          formatCodeBlock={formatCodeBlock}
+          formatH1={formatH1}
+          formatH2={formatH2}
+          formatH3={formatH3}
+          formatH4={formatH4}
+          formatImage={formatImage}
+          formatItalic={formatItalic}
+          formatQuote={formatQuote}
+          formatStrike={formatStrike}
+          handleClickImageButton={handleClickImageButton}
+          handleClickLinkButton={handleClickLinkButton}
+        />
         <EditorBox>
           {isLinkModalOpen && (
             <LinkInputModal
