@@ -10,7 +10,6 @@ import {
 import getCaretCoordinates from "textarea-caret";
 import LinkInputModal from "./LinkInputModal";
 import { writePageLinkModalContext } from "../../stores/WritePageLinkModalContext";
-import { writePageTagsContext } from "../../stores/WritePageTagsContext";
 import { useFormatter } from "../../hooks/useFormatter";
 import Toolbar from "./Toolbar";
 import TagList from "./TagList";
@@ -18,7 +17,7 @@ import { useNavigate } from "react-router";
 import Menu from "./Menu";
 import { useMarkdownImageHandler } from "../../hooks/useMarkdownImageHandler";
 
-const WriteEditor = ({ text, setText, title, setTitle, onOpenSubmitMenu }) => {
+const WriteEditor = ({ content, setContent, title, setTitle, tags, addTag, deleteTag, onOpenSubmitMenu }) => {
   const navigate = useNavigate();
 
   const handleExit = () => [navigate(-1)];
@@ -37,7 +36,7 @@ const WriteEditor = ({ text, setText, title, setTitle, onOpenSubmitMenu }) => {
     formatStrike,
     formatImage,
     formatLink,
-  } = useFormatter(textareaRef, setText);
+  } = useFormatter(textareaRef, setContent);
 
   const {
     openLinkModal,
@@ -51,10 +50,8 @@ const WriteEditor = ({ text, setText, title, setTitle, onOpenSubmitMenu }) => {
 
   const { handleImageDrop, handleImagePaste } = useMarkdownImageHandler(
     textareaRef,
-    setText
+    setContent
   );
-
-  const { tags, addTag, deleteTag } = writePageTagsContext();
 
   const handleClickConfirmOnLinkModal = () => {
     const { linkText } = writePageLinkModalContext.getState();
@@ -120,9 +117,9 @@ const WriteEditor = ({ text, setText, title, setTitle, onOpenSubmitMenu }) => {
           <Editor
             ref={textareaRef}
             onChange={(e) => {
-              setText(e.target.value);
+              setContent(e.target.value);
             }}
-            value={text}
+            value={content}
             placeholder="마크다운을 지원하는 에디터입니다. 당신의 글을 써보아요."
             onDragOver={handleDragOver}
             onDrop={handleImageDrop}

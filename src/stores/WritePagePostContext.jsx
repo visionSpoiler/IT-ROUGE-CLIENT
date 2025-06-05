@@ -8,6 +8,7 @@ export const useWriteStore = create((set, get) => ({
   description: "",
   visibility: "public", // "public" or "private"
   series: "",
+  url: "",
 
   setTitle: (title) => set({ title }),
   setContent: (content) => set({ content }),
@@ -18,6 +19,7 @@ export const useWriteStore = create((set, get) => ({
     }
   },
   setSeries: (series) => set({ series }),
+  setURL: (url) => set({url}),
 
   // 태그 관련 메서드
   addTag: (label) => {
@@ -46,6 +48,6 @@ export const useWriteStore = create((set, get) => ({
       description: "",
       visibility: "public",
       series: "",
+      url: "",
     }),
 }));
-
