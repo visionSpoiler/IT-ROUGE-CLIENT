@@ -11,7 +11,7 @@ export const LinkInputModalBox = styled.div`
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 4px;
   left: ${props => `${props.$position.x}px`}; 
-  top: ${props => `${props.$position.y}px`};
+  top: ${props => `calc(${props.$position.y}px + 1.5em)`};
 `;
 
 export const Title = styled.div`
