@@ -47,7 +47,7 @@ const RegisterPage = () => {
     }
   };
 
-  const onClickCancle = () => {
+  const onClickCancel = () => {
     navigate("/");
   };
 
@@ -90,7 +90,7 @@ const RegisterPage = () => {
 
   return (
     <RegisterForm
-      onClickCancle={onClickCancle}
+      onClickCancel={onClickCancel}
       onClickRegister={onClickRegister}
       onChangeId={onChangeId}
       onClickIdCheck={onClickIdCheck}

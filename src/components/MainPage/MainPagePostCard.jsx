@@ -55,7 +55,7 @@ const MainPagePostCardSubInfo = styled.div`
   color: #868e96;
 `;
 
-const MainPagePostCardFotter = styled.div`
+const MainPagePostCardFooter = styled.div`
   padding: 0.5rem;
   border-top: 1px solid #f1f3f5;
   display: flex;
@@ -72,7 +72,7 @@ const MainPagePostCard = ({post}) => {
         <MainPagePostCardContentBody>{`${StringUtils.clamp("제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목제목", 75)}`}</MainPagePostCardContentBody>
         <MainPagePostCardSubInfo>날짜 및 시간</MainPagePostCardSubInfo>
       </MainPagePostCardContentBox>
-      <MainPagePostCardFotter>푸터</MainPagePostCardFotter>
+      <MainPagePostCardFooter>푸터</MainPagePostCardFooter>
     </MainPagePostCardBox>
   );
 };

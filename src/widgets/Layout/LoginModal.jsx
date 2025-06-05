@@ -20,9 +20,9 @@ import {
   LoginModalFormInput,
   LoginModalFormButton,
   LoginModalOptionBox,
-  LoginModalFotterBox,
-  LoginModalFotterText,
-  LoginModalFotterTextButton,
+  LoginModalFooterBox,
+  LoginModalFooterText,
+  LoginModalFooterTextButton,
   LogimModalEmailSentText
 } from "../../components/LayoutHeader/index";
 import { CircleButton } from "../../components/button/CircleButton";
@@ -80,16 +80,16 @@ const LoginModal = ({ onCloseModal, onClickSubmit, isEmailSent }) => {
               ))}
             </LoginModalOptionBox>
           </LoginModalBody>
-          <LoginModalFotterBox>
-            <LoginModalFotterText>
+          <LoginModalFooterBox>
+            <LoginModalFooterText>
               {mode === "로그인"
                 ? "아직 회원이 아니신가요?"
                 : "계정이 이미 있으신가요?"}
-            </LoginModalFotterText>
-            <LoginModalFotterTextButton onClick={handleChangeMode}>
+            </LoginModalFooterText>
+            <LoginModalFooterTextButton onClick={handleChangeMode}>
               {mode === "로그인" ? "회원가입" : "로그인"}
-            </LoginModalFotterTextButton>
-          </LoginModalFotterBox>
+            </LoginModalFooterTextButton>
+          </LoginModalFooterBox>
         </LoginFormlBox>
       </LoginModalBox>
     </BackDrop>

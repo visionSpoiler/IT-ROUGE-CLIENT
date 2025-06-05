@@ -18,7 +18,7 @@ export const RegisterGreeting  = styled.h2`
   font-weight: 600;
 `
 
-export const RegosterGuide = styled.div`
+export const RegisterGuide = styled.div`
   font-size: 1rem;
   margin-bottom: 1rem;
 `
@@ -77,7 +77,7 @@ export const ButtonBox = styled.div`
   gap: 1rem;
 `
 
-export const CancleButton = styled.button`
+export const CancelButton = styled.button`
     height: 3rem;
     font-size: 1.5rem;
     padding-left: 2rem;

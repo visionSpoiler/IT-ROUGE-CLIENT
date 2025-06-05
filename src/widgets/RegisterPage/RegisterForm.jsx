@@ -3,17 +3,17 @@ import {
   RegisterLayout,
   RegisterFormBox,
   RegisterGreeting,
-  RegosterGuide,
+  RegisterGuide,
   RegisterLabel,
   RegisterInput,
   ButtonBox,
-  CancleButton,
+  CancelButton,
   RegisterButton,
   RegisterIdCheckButton,
   RegisterInputBox,
 } from "../../components/RegisterPage";
 
-const RegisterForm = ({ onClickCancle, onClickRegister, onChangeId, onClickIdCheck, isIdChecked }) => {
+const RegisterForm = ({ onClickCancel, onClickRegister, onChangeId, onClickIdCheck, isIdChecked }) => {
   const [form, setForm] = useState({
     nickname: "",
     userId: "",
@@ -36,9 +36,9 @@ const RegisterForm = ({ onClickCancle, onClickRegister, onChangeId, onClickIdChe
     });
   };
 
-  const handleCancle = () => {
-    if (onClickCancle) {
-      onClickCancle();
+  const handleCancel = () => {
+    if (onClickCancel) {
+      onClickCancel();
     }
   };
 
@@ -52,7 +52,7 @@ const RegisterForm = ({ onClickCancle, onClickRegister, onChangeId, onClickIdChe
     <RegisterLayout>
       <RegisterFormBox>
         <RegisterGreeting>환영합니다!</RegisterGreeting>
-        <RegosterGuide>기본 회원 정보를 등록해 주세요.</RegosterGuide>
+        <RegisterGuide>기본 회원 정보를 등록해 주세요.</RegisterGuide>
         <RegisterLabel>사용자 ID</RegisterLabel>
         <RegisterInputBox>
           <RegisterInput
@@ -82,7 +82,7 @@ const RegisterForm = ({ onClickCancle, onClickRegister, onChangeId, onClickIdChe
           onChange={handleFormChange}
         />
         <ButtonBox>
-          <CancleButton onClick={handleCancle}>취소</CancleButton>
+          <CancelButton onClick={handleCancel}>취소</CancelButton>
           <RegisterButton onClick={handleRegister}>가입</RegisterButton>
         </ButtonBox>
       </RegisterFormBox>

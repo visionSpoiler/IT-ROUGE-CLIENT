@@ -118,19 +118,19 @@ export const LoginModalOptionBox = styled.div`
   justify-content: space-around;
 `;
 
-export const LoginModalFotterBox = styled.div`
+export const LoginModalFooterBox = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 16px;
 `;
 
-export const LoginModalFotterText = styled.div`
+export const LoginModalFooterText = styled.div`
   color: #20c997;
   font-size: 1 rem;
 `;
 
-export const LoginModalFotterTextButton = styled.div`
+export const LoginModalFooterTextButton = styled.div`
   color: #20c997;
   font-weight: bold;
   font-size: 1 rem;
