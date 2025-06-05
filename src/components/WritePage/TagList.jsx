@@ -7,6 +7,7 @@ export const TagBox = styled.div`
   flex-wrap: wrap;
   margin-bottom: 1rem;
   gap: 8px;
+  position: relative;
 `;
 
 const sharedStyle = `
@@ -34,3 +35,15 @@ export const TagInput = styled.input`
   background: none;
     padding: 0.5rem;
 `;
+
+export const GuideText = styled.div`
+  position: absolute;
+  background-color: #212529;;
+  color: white;
+  padding: .5rem;
+  font-size: 0.75rem;
+  left: 0;
+  top: 100%;
+  white-space: pre-line;
+  line-height: 1.5;
+`

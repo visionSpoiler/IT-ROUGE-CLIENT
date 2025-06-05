@@ -51,25 +51,3 @@ export const Editor = styled.textarea`
   flex: 1;
 `;
 
-export const MenuBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  padding: 16px 48px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-`;
-
-export const ExitButton = styled.button`
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 8px 16px;
-
-  &:hover {
-    background-color: #f8f9fa;
-  }
-`;
-

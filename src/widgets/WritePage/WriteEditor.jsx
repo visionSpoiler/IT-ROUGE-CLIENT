@@ -2,8 +2,6 @@ import { useRef } from "react";
 import {
   Editor,
   EditorBox,
-  ExitButton,
-  MenuBox,
   WriteBoundaryLine,
   WriteBox,
   WriteBoxLayout,
@@ -16,8 +14,14 @@ import { writePageTagsContext } from "../../stores/WritePageTagsContext";
 import { useFormatter } from "../../hooks/useFormatter";
 import Toolbar from "./Toolbar";
 import TagList from "./TagList";
+import { useNavigate } from "react-router";
+import Menu from "./Menu";
 
-const WriteEditor = ({ text, setText, title, setTitle }) => {
+const WriteEditor = ({ text, setText, title, setTitle, onClickPublish }) => {
+  const navigate = useNavigate();
+
+  const handleExit = () => [navigate(-1)];
+
   const textareaRef = useRef(null);
   const fileInputRef = useRef(null);
   const {
@@ -72,9 +76,13 @@ const WriteEditor = ({ text, setText, title, setTitle }) => {
   return (
     <WriteBox>
       <WriteBoxLayout>
-        <WriteTitle placeholder="제목을 입력하세요." value={title} onChange={(e) => setTitle(e.target.value)}/>
+        <WriteTitle
+          placeholder="제목을 입력하세요."
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
         <WriteBoundaryLine />
-        <TagList tags={tags} onDeleteTag={deleteTag} onAddTag={addTag}/>
+        <TagList tags={tags} onDeleteTag={deleteTag} onAddTag={addTag} />
         <Toolbar
           fileInputRef={fileInputRef}
           formatBold={formatBold}
@@ -109,9 +117,7 @@ const WriteEditor = ({ text, setText, title, setTitle }) => {
           ></Editor>
         </EditorBox>
       </WriteBoxLayout>
-      <MenuBox>
-        <ExitButton>나가기</ExitButton>{" "}
-      </MenuBox>
+      <Menu onExit={handleExit} onClickPublish={onClickPublish} />
     </WriteBox>
   );
 };
